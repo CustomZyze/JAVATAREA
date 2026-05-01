@@ -4,8 +4,8 @@ public enum Enumeracion{
     COCA_COLA(1000),
     SPRITE(800),
     FANTA(800),
-    SNICKERS(600),
-    SUPER8(300);
+    SUPER8(300),
+    SNICKERS(600);
 
     private final int precio;
 
