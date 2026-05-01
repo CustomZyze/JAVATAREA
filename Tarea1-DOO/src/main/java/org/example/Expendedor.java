@@ -26,8 +26,8 @@ public class Expendedor {
             throw new PagoIncorrectoException();
         }
         if (m.getValor()< precio){
-            throw new PagoInsuficienteException();
             monVu.addAlgo(m);
+            throw new PagoInsuficienteException();
 
         }
 
@@ -40,7 +40,7 @@ public class Expendedor {
         }
         else{
             monVu.addAlgo(m);
-            return null;
+            throw new NoHayProductoException();
         }
 
         if(b == null){
