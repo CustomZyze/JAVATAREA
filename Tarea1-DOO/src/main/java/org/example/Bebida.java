@@ -1,14 +1,7 @@
 package org.example;
 
-public abstract class Bebida {
-    private int serie;
-    public  Bebida(int serie){
-        this.serie = serie;
+public abstract class Bebida extends Producto{
+    public Bebida(int serie){
+        super(serie);
     }
-    public int getSerie(){
-        return serie;
-    }
-    public  abstract String beber();
-
-
 }
