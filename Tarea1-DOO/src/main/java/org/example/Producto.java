@@ -7,7 +7,7 @@ public abstract class Producto{
         this.serie=serie;
 
     }
-    public abstract String beber();
+    public abstract String consumir();
 
     public int getSerie(){
         return serie;
