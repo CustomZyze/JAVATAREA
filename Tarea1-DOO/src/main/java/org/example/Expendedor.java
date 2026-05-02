@@ -8,10 +8,8 @@ public class Expendedor {
     private Deposito<Bebida> fanta;
     private Deposito<Dulce> super8;
     private Deposito<Dulce> snicker;
-    private int precio;
-    public static final int COCA=1;
-    public static final int SPRITE=2;
-    public Expendedor(int numBebidas, int precioBebidas){
+
+    public Expendedor(int numProductos){
         coca = new Deposito<Bebida>();
         sprite = new Deposito<Bebida>();
         monVu = new Deposito<Moneda>();
@@ -19,8 +17,7 @@ public class Expendedor {
         super8 = new Deposito<Dulce>();
         snicker = new Deposito<Dulce>();
 
-        precio = precioBebidas;
-        for(int i = 0 ; i < numBebidas ; i++){
+        for(int i = 0 ; i < numProductos ; i++){
             coca.addAlgo(new CocaCola(100 + i));
             sprite.addAlgo(new Sprite(200 + i));
             fanta.addAlgo(new Fanta(300 + i));
@@ -35,7 +32,7 @@ public class Expendedor {
         if(m == null){
             throw new PagoIncorrectoException();
         }
-        if (m.getValor()< precio){
+        if (m.getValor()< cual.getPrecio()){
             monVu.addAlgo(m);
             throw new PagoInsuficienteException();
 
@@ -53,7 +50,7 @@ public class Expendedor {
             monVu.addAlgo(m);
             throw new NoHayProductoException();
         }
-        int diferencia = m.getValor() - precio;
+        int diferencia = m.getValor() - cual.getPrecio();
 
         for(int i = 0; i < diferencia; i += 100){
             monVu.addAlgo(new Moneda100());
