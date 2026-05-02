@@ -30,7 +30,7 @@ public class Expendedor {
         }
 
     }
-    public Producto comprarBebida (Moneda m , Enumeracion cual) throws NoHayProductoException, PagoIncorrectoException, PagoInsuficienteException {
+    public Producto comprarProducto (Moneda m , Enumeracion cual) throws NoHayProductoException, PagoIncorrectoException, PagoInsuficienteException {
 
         if(m == null){
             throw new PagoIncorrectoException();
@@ -50,7 +50,7 @@ public class Expendedor {
             case SNICKERS -> p= snicker.getAlgo();
         }
         if (p == null){
-            monVu.addAlgo();
+            monVu.addAlgo(m);
             throw new NoHayProductoException();
         }
         int diferencia = m.getValor() - precio;
