@@ -32,11 +32,17 @@ public class Expendedor {
         if(m == null){
             throw new PagoIncorrectoException();
         }
+
+        if (cual == null){
+            monVu.addAlgo(m);
+            throw new NoHayProductoException();
+        }
+
         if (m.getValor()< cual.getPrecio()){
             monVu.addAlgo(m);
             throw new PagoInsuficienteException();
-
         }
+
         Producto p = null;
 
         switch(cual){
@@ -46,10 +52,12 @@ public class Expendedor {
             case SUPER8 -> p= super8.getAlgo();
             case SNICKERS -> p= snicker.getAlgo();
         }
+
         if (p == null){
             monVu.addAlgo(m);
             throw new NoHayProductoException();
         }
+
         int diferencia = m.getValor() - cual.getPrecio();
 
         for(int i = 0; i < diferencia; i += 100){
