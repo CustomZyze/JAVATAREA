@@ -3,7 +3,7 @@ package org.example;
 public class Comprador {
         private String sabor;
         private int vuelto;
-        public Comprador(Moneda m, int cualProducto, Expendedor exp) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException{
+        public Comprador(Moneda m, Enumeracion cualProducto, Expendedor exp) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException{
             
             Producto p = exp.comprarProducto(m , cualProducto);
             if( p != null){
