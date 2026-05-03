@@ -1,19 +1,19 @@
 package org.example;
 
 public class Comprador {
-        private String sonido;
+        private String sabor;
         private int vuelto;
-        public Comprador(Moneda m, int cualBebida, Expendedor exp){
-            Bebida b = exp.comprarBebida(m , cualBebida);
+        public Comprador(Moneda m, Enumeracion cualProducto, Expendedor exp) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException{
+            
+            Producto p = exp.comprarProducto(m , cualProducto);
+            if( p != null){
+                this.sabor = p.consumir();
+            }
+
             Moneda v;
-            if( b != null){
-                sonido = b.beber();
-            }
-            else {
-                sonido = null;
-            }
+
             while((v = exp.getVuelto()) != null){
-                vuelto = vuelto +  v.getValor();
+                this.vuelto = vuelto +  v.getValor();
             }
 
 
@@ -21,7 +21,7 @@ public class Comprador {
         public int cuantoVuelto(){
             return vuelto;
         }
-        public String queBebiste(){
-            return sonido;
+        public String queConsumiste(){
+            return sabor;
         }
 }
