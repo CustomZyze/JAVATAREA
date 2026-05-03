@@ -11,7 +11,7 @@ public class Moneda1000 extends Moneda {
      * Llama al constructor de la clase padre Moneda.
      */
     public Moneda1000(){
-    super();
+        super();
     }
 
     /**

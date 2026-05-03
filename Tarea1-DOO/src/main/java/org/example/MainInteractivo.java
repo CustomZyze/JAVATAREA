@@ -76,6 +76,8 @@ public class MainInteractivo {
                     } catch (PagoInsuficienteException g) {
                         System.out.println("Error en la compra: " + g.getMessage());
                         System.out.println("Vuelto: " + exp1.getVuelto());
+                    } catch (Exception h) {
+                        System.out.println("Error: " + h.getMessage());
                     }
                     break;
 
