@@ -1,2 +1,2 @@
 # Tarea java
-# Integrantes: Matias Cabello Carbajal, Maximiliano Pinto Valenzuela, Paulo Torres Thieme
+# Integrantes: Matias Ignacio Cabello Carbajal, Maximiliano Enrique Pinto Valenzuela, Paulo Bastian Torres Thieme
